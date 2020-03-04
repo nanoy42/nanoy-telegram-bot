@@ -85,14 +85,12 @@ class Bot:
         self.jmentape_handler = CommandHandler("jmentape", self.jmentape)
         self.help_handler = CommandHandler("help", self.help)
         self.react_handler = MessageHandler(Filters.text, self.react_to_message)
-        self.unknown_handler = MessageHandler(Filters.command, self.nanoy)
 
         self.dispatcher.add_handler(self.start_handler)
         self.dispatcher.add_handler(self.nanoy_handler)
         self.dispatcher.add_handler(self.jmentape_handler)
         self.dispatcher.add_handler(self.help_handler)
         self.dispatcher.add_handler(self.react_handler)
-        self.dispatcher.add_handler(self.unknown_handler)
 
         self.last_message = int(time.time())
 

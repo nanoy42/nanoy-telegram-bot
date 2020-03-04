@@ -52,6 +52,7 @@ MAP = {
     "quoi": ["feur", "fure", "la", "ffe", "rd", "t", "gnamann", "lition", "xial",],
     "qui": ["tus", "wi"],
     "ha": ["bé"],
+    "chut": ["du Niagara"],
 }
 
 ARCH = [
