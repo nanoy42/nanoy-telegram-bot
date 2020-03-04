@@ -235,7 +235,7 @@ if __name__ == "__main__":
                 bot = Bot(self.directory)
                 bot.start_bot()
 
-        pidfile = "/tmp/telegram-list-bot.pid"
+        pidfile = "/tmp/nanoy-teleram-bot.pid"
         d = ListBotDaemon(os.path.dirname(os.path.realpath(__file__)), pidfile=pidfile)
 
     if arguments["start"]:
