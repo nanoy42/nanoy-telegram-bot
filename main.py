@@ -119,7 +119,6 @@ class Bot:
             sys.exit()
         try:
             self.rate = config.getfloat("Global", "rate")
-            print(self.rate)
         except:
             logging.error("Unable to find 'rate' parameter in section 'Global'.")
             sys.exit()
