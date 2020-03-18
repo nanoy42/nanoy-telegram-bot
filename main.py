@@ -154,6 +154,14 @@ class Bot:
                 if message == key and int(time.time()) - self.last_message > self.rate:
                     self.last_message = int(time.time())
                     context.bot.send_message(chat_id=chat_id, text=random.choice(e))
+            react = None
+            for word in message.split(" "):
+                if word[:2] == "dy":
+                    react = word[2:] or None
+                elif word[:2] == "di":
+                    react = word[2:] or None
+                if react and not react == "t":
+                    context.bot.send_message(chat_id=chat_id, text=react)
 
     def jmentape(self, update, context):
         """jmentape command handler.
