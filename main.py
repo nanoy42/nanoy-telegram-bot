@@ -156,6 +156,7 @@ class Bot:
                     context.bot.send_message(chat_id=chat_id, text=random.choice(e))
             react = None
             for word in message.split(" "):
+                react = None
                 if word[:2] == "dy":
                     react = word[2:] or None
                 elif word[:2] == "di":
