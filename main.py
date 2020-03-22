@@ -78,6 +78,7 @@ class Bot:
             logging.error("Unable to grab bot.")
             sys.exit()
 
+
         self.dispatcher = self.updater.dispatcher
 
         self.start_handler = CommandHandler("start", self.nanoy)
@@ -120,6 +121,14 @@ class Bot:
         except:
             logging.error("Unable to find 'rate' parameter in section 'Global'.")
             sys.exit()
+        
+        try:
+            with open("nanoybot_words.txt", "r") as f:
+                self.allowed_words = f.readlines()
+        except:
+            logging.error("Unable to load words")
+            self.allowed_words = []
+        
         logging.info("Configuration loaded")
 
     def nanoy(self, update, context):
@@ -157,9 +166,9 @@ class Bot:
             react = None
             for word in message.split(" "):
                 react = None
-                if word[:2] == "dy":
+                if word[:2] == "dy" and word in self.allowed_words:
                     react = word[2:] or None
-                elif word[:2] == "di":
+                elif word[:2] == "di" and word in self.allowed_words:
                     react = word[2:] or None
                 if react and not react == "t":
                     context.bot.send_message(chat_id=chat_id, text=react)
