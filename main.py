@@ -78,7 +78,6 @@ class Bot:
             logging.error("Unable to grab bot.")
             sys.exit()
 
-
         self.dispatcher = self.updater.dispatcher
 
         self.start_handler = CommandHandler("start", self.nanoy)
@@ -121,14 +120,14 @@ class Bot:
         except:
             logging.error("Unable to find 'rate' parameter in section 'Global'.")
             sys.exit()
-        
+
         try:
-            with open("nanoybot_words.txt", "r") as f:
+            with open("{}/nanoybot_words.txt".format(self.directory), "r") as f:
                 self.allowed_words = f.readlines()
         except:
             logging.error("Unable to load words")
             self.allowed_words = []
-        
+
         logging.info("Configuration loaded")
 
     def nanoy(self, update, context):
