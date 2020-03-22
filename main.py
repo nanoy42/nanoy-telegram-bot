@@ -123,7 +123,7 @@ class Bot:
 
         try:
             with open("{}/nanoybot_words.txt".format(self.directory), "r") as f:
-                self.allowed_words = f.readlines()
+                self.allowed_words = f.read().splitlines()
         except:
             logging.error("Unable to load words")
             self.allowed_words = []
