@@ -122,10 +122,16 @@ class Bot:
             sys.exit()
 
         try:
+            self.use_dictionnary = config.getboolean("Global", "use_dictionnary")
+        except:
+            logging.warning("No use_dictionnary setting")
+            self.use_dictionnary = True
+
+        try:
             with open("{}/nanoybot_words.txt".format(self.directory), "r") as f:
                 self.allowed_words = f.read().splitlines()
         except:
-            logging.error("Unable to load words")
+            logging.warning("Unable to load words")
             self.allowed_words = []
 
         logging.info("Configuration loaded")
@@ -165,9 +171,13 @@ class Bot:
             react = None
             for word in message.split(" "):
                 react = None
-                if word[:2] == "dy" and word in self.allowed_words:
+                if word[:2] == "dy" and (
+                    not self.use_dictionnary or word in self.allowed_words
+                ):
                     react = word[2:] or None
-                elif word[:2] == "di" and word in self.allowed_words:
+                elif word[:2] == "di" and (
+                    not self.use_dictionnary or word in self.allowed_words
+                ):
                     react = word[2:] or None
                 if react and not react == "t":
                     context.bot.send_message(chat_id=chat_id, text=react)
