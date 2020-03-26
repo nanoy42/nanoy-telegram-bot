@@ -64,6 +64,7 @@ MAP = {
         "ri",
         "kié",
         "rif",
+        "SOI. ON RESTE CHEZ SOI !!",
     ],
 }
 
