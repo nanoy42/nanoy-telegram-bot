@@ -54,6 +54,7 @@ MAP = {
     "ha": ["bé"],
     "chut": ["du Niagara"],
     "dit": ["kton", "stopie", "fféomorphisme", "fférentiel", "stance", "abète"],
+    "cheh": ["thor", "tor"],
 }
 
 ARCH = [
@@ -70,4 +71,3 @@ ARCH = [
     "macos",
     "mac",
 ]
-
