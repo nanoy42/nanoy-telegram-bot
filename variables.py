@@ -66,6 +66,8 @@ MAP = {
         "rif",
         "SOI. ON RESTE CHEZ SOI !!",
     ],
+    "meh": ["zon", "tié", "ss"],
+    "chou": ["fleur"],
 }
 
 ARCH = [
