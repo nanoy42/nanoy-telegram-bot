@@ -54,7 +54,17 @@ MAP = {
     "ha": ["bé"],
     "chut": ["du Niagara"],
     "dit": ["kton", "stopie", "fféomorphisme", "fférentiel", "stance", "abète"],
-    "cheh": ["thor", "tor"],
+    "cheh": [
+        "thor",
+        "tor",
+        "guevara",
+        "tif",
+        "rubin",
+        "toi ou chez moi ?",
+        "ri",
+        "kié",
+        "rif",
+    ],
 }
 
 ARCH = [
