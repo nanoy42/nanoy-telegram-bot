@@ -55,7 +55,7 @@ except:
 
 class Bot:
     """"
-    Define a wrapper for telegram-list-bot. Defines handlers for commands.
+    Define a wrapper for nanoy-telegram-bot. Defines handlers for commands.
     """
 
     def __init__(self, directory=None):
@@ -229,14 +229,14 @@ class Bot:
 
 
 if __name__ == "__main__":
-    arguments = docopt(__doc__, version="Nanoy List Bot 0.9")
+    arguments = docopt(__doc__, version="Nanoy Telegram Bot 0.9")
     daemon = arguments["start"] or arguments["stop"] or arguments["restart"]
     debug = arguments["debug"]
 
     if debug:
         logging.basicConfig(level=logging.DEBUG)
     else:
-        logfile = os.path.join(os.getcwd(), "telegram-list-bot.log")
+        logfile = os.path.join(os.getcwd(), "nanoy-telegram-bot.log")
         logging.basicConfig(filename=logfile, level=logging.WARNING)
 
     d = None
@@ -260,7 +260,7 @@ if __name__ == "__main__":
                 bot = Bot(self.directory)
                 bot.start_bot()
 
-        pidfile = "/tmp/nanoy-teleram-bot.pid"
+        pidfile = "/tmp/nanoy-telegram-bot.pid"
         d = ListBotDaemon(os.path.dirname(os.path.realpath(__file__)), pidfile=pidfile)
 
     if arguments["start"]:
