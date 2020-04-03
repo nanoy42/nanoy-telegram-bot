@@ -162,7 +162,7 @@ class Bot:
             for arch in ARCH:
                 if arch in message:
                     context.bot.send_message(
-                        chat_id=chat_id, text="Tu devrais passer à Arch Linux."
+                        chat_id=chat_id, text="Tu devrais passer à Arch Linux (rip la synchro contacts/agenda par contre)."
                     )
             for key, e in MAP.items():
                 if message == key and int(time.time()) - self.last_message > self.rate:
